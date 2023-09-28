@@ -31,8 +31,16 @@ public class AdminActivity extends AppCompatActivity {
             );
             Cursor cursor = helper.getAllPerson();
             while (cursor.moveToNext()){
-                String name = cursor.getString(0);
-                Log.e(Constants.LOG_TAG, "User: " + name);
+                String id = cursor.getString(0);
+                String name = cursor.getString(1);
+                String email = cursor.getString(2);
+                String password = cursor.getString(3);
+                String isSellers = cursor.getString(4);
+                Log.e(Constants.LOG_TAG, "id: " + id);
+                Log.e(Constants.LOG_TAG, "user: " + name);
+                Log.e(Constants.LOG_TAG, "email: " + email);
+                Log.e(Constants.LOG_TAG, "pass: " + password);
+                Log.e(Constants.LOG_TAG, "isSeller: " + isSellers);
             }
         });
 
